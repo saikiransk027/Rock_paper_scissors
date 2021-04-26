@@ -84,28 +84,17 @@ body{
         hsl(39, 89%, 49%) ,
         hsl(40, 84%, 53%)
        };
-
-       .btn-rock{
+       
+    .btn-rock{
          
         background: linear-gradient( to bottom,
         hsl(349, 71%, 52%) ,
         hsl(349, 70%, 56%)
 
     }
-     } 
      
-     
-     
-
-       .btn-rock{
-         
-        background: linear-gradient( to bottom,
-        hsl(349, 71%, 52%) ,
-        hsl(349, 70%, 56%)
-
-    }
-    
-     .btn-rules{
+    .btn-rules{
+        
         border: 2px solid #fff;
         border-radius: 10px;
         color: #fff;
