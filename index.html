@@ -54,9 +54,15 @@
                 </span>
         </button> 
        </main>   
-
-            
-       <button class="btn-rules">Rules</button>
+       <div class="rules-model" id = "model">
+           
+               <img src="./images/image-rules.svg" 
+               alt="rules">
+               <button id = "close"> <img src="./images/icon-close.svg"
+                 alt="close" /></button>
+           
+       </div>   
+       <button class="btn-rules" id = " open">Rules</button>
     </div>
     <div class="selection" id="selection">
         <div>
@@ -69,14 +75,15 @@
         </button>
         </div>
         <div>
-             <p class="big=text">
+             <p class="big-text">
                  You 
                  <span id="winner">win</span>
              </p> 
             <button class='btn' id="reset">Play again</button>
         </div>
         <div>
-         <h2> the house picked</h2>
+         <h2> The house picked</h2>
+
          <button class="btn-circle btn-rock" 
          id = " computer_select">
              <span class="wrapper">

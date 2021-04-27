@@ -8,6 +8,11 @@ const computer_select = document.getElementById('computer_select');
 const winner = document.getElementById('winner');
 const choices= ['paper','rock','scissors'];
 
+//modal buutons
+const openBtn = document.getElementById('open');
+const closeBtn = document.getElementById('close');
+const model = document.getElementById('model');
+
 let score = 0; 
 let userChoice = undefined;
 
@@ -25,6 +30,14 @@ reset.addEventListener('click',() => {
    main.style.display = 'flex';
    selection.style.display = 'none';
 });
+openBtn.addEventListener('click',() => {
+     model.style.display = ' flex';
+
+ });
+ closeBtn.addEventListener('click',() => {
+    model.style.display = 'none';
+
+});
  function checkWinner(){
      const computerChoice = pickRandomChoice();
      //update view
@@ -34,11 +47,11 @@ reset.addEventListener('click',() => {
      
      if (userChoice === computerChoice ) {
     //draw
-    winner.innerText = 'draw';
+         winner.innerText = 'draw';
     }
     else if(
      (userChoice === 'paper' && computerChoice === 'rock') ||
-    ( userChoice === 'rock' && computerChoice === 'scissors') ||
+     (userChoice === 'rock' && computerChoice === 'scissors') ||
      (userChoice === 'scissors' && computerChoice === 'papaer') 
      ){
          //won
@@ -54,13 +67,13 @@ reset.addEventListener('click',() => {
      selection.style.display = 'flex';
  }
 
-function updateScore(value){
-       score += value;
+function updateScore(){
+       score += 1;
 
        scoreEle.innerText = score ;
 }
 function pickRandomChoice() {
-    return choices[ Math.floor (Math.random() * choices.length)];
+    return choices[Math.floor (Math.random() * choices.length)];
 }
 
 function updateSelection(selectionEle, choice) {
