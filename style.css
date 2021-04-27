@@ -175,16 +175,18 @@ body{
     }
      
     .selection{
-        display: none; 
-        justify-content: space-between;
+        display: none;
+        flex-wrap:wrap; 
+        justify-content: center ;
         align-items: center;
         text-align: center;
-        width:800px;
+        width:1000px;
         max-width: 100%;
         margin: 0 auto;
+        /* background-color: #fff; */
     }
-    .selection.btn-circle{
-        margin: 50px;
+    .selection .btn-circle{
+        margin: 50px 100px;
         transform: scale(1.4);
     }
 
@@ -221,3 +223,16 @@ body{
 
 }
      
+@media (max-width: 800px) {
+
+    .selection .btn-circle{
+        margin: 50px 20px;
+        transform: scale(1);
+    }
+    .go-down {
+        order: 1 ;
+    }
+    .selection{
+        width: 500px;
+    }
+}
