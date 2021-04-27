@@ -1,3 +1,4 @@
+
 const buttons = document.querySelectorAll('.pick');
 const scoreEle = document.getElementById('score');
 const main = document.getElementById('main');
@@ -19,9 +20,10 @@ let userChoice = undefined;
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
       userChoice = button.getAttribute('data-choice');
-     
-     
       checkWinner();
+     
+     
+
       
     });
 });
@@ -38,7 +40,7 @@ openBtn.addEventListener('click',() => {
     model.style.display = 'none';
 
 });
- function checkWinner(){
+function checkWinner(){
      const computerChoice = pickRandomChoice();
      //update view
      updateSelection(user_select, userChoice);
@@ -48,20 +50,19 @@ openBtn.addEventListener('click',() => {
      if (userChoice === computerChoice ) {
     //draw
          winner.innerText = 'draw';
-    }
-    else if(
-     (userChoice === 'paper' && computerChoice === 'rock') ||
-     (userChoice === 'rock' && computerChoice === 'scissors') ||
-     (userChoice === 'scissors' && computerChoice === 'papaer') 
-     ){
+    }else if (
+       (userChoice === 'paper' && computerChoice === 'rock') ||
+       (userChoice === 'rock' && computerChoice === 'scissors') ||
+       (userChoice === 'scissors' && computerChoice === 'paper') 
+    ) {
          //won
          updateScore(1);
          winner.innerText = 'win';
-     } else{
+    } else {
          //user lost
          updateScore(-1);
          winner.innerText = 'lost';
-     }
+    }
       //show the selection hide me
      main.style.display = 'none';
      selection.style.display = 'flex';
@@ -73,15 +74,15 @@ function updateScore(){
        scoreEle.innerText = score ;
 }
 function pickRandomChoice() {
-    return choices[Math.floor (Math.random() * choices.length)];
+    return choices [Math.floor(Math.random() * choices.length)];
 }
 
 function updateSelection(selectionEle, choice) {
      
     //class reset
-    selectionEle.classList.remove(' btn-paper');
-    selectionEle.classList.remove(' btn-rock');
-    selectionEle.classList.remove(' btn-scissors');
+    selectionEle.classList.remove('btn-paper');
+    selectionEle.classList.remove('btn-rock');
+    selectionEle.classList.remove('btn-scissors');
     //update the img
     const img = selectionEle.querySelector('img');
     selectionEle.classList.add(`btn-${choice}`);
